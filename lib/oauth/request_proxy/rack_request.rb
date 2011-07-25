@@ -27,6 +27,10 @@ module OAuth::RequestProxy
       parameters['oauth_signature']
     end
 
+    def normalized_parameters
+        parameters_for_signature.to_query
+    end
+
   protected
 
     def query_params
